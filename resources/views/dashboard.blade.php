@@ -71,12 +71,13 @@ body {
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-  
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("Excel To CV") }}
+                    {{ __("Excel To CV") }}<a href="{{ url('/generate-pdf') }}" target="_blank" class="btn btn-primary">Open PDF</a>
+
                 </div>
             </div>
         </div>
@@ -84,9 +85,9 @@ body {
 
     <div>
         <center>
-
+{{--
         <form action="{{ route('upload.file') }}" method="post" enctype="multipart/form-data">
-        @csrf
+        @csrf --}}
         <div class="file-upload-form">
             <label for="file" class="file-upload-label">
                 <div class="file-upload-design">
@@ -97,13 +98,13 @@ body {
                     </svg>
                     <p>Drag and Drop</p>
                     <p>or</p>
-                    <span class="browse-button">Browse file</span>
+                    <span class="browse-button">Browse file123</span>
                 </div>
                 <input id="file" name="file" type="file" />
             </label>
         </div>
         <button type="submit">Upload</button>
-    </form>
+    {{-- </form> --}}
 
     <div class="container mt-5">
         <div class="card" sty>
@@ -144,6 +145,6 @@ body {
 
 
         </center>
-    
+
 </div>
 </x-app-layout>

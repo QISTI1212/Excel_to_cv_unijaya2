@@ -28,4 +28,17 @@ class UploadController extends Controller
     return back()->with('success', 'File uploaded successfully.');
 }
 
+
+public function generatePDF()
+{
+    $dompdf = new Dompdf();
+    $dompdf->loadHtml('<h1>Hello, World!</h1>');
+
+    $dompdf->setPaper('A4', 'landscape');
+
+    $dompdf->render();
+
+    return $dompdf->stream("pdf.cv");
+}
+
 }
